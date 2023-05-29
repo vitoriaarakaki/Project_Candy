@@ -1,7 +1,7 @@
-extends Node
+extends KinematicBody2D
 class_name Player
 
-const PROJECTILE: PackedScene = preload("res://Scripts/Player/arma.gd") #repertorio do script da arma
+const PROJECTILE: PackedScene = preload("res://scripts/player/arrow.gd") #repertorio do script da arma
 
 #fazer referencia a sprite
 onready var sprite: Sprite = get_node("Texture")
@@ -17,6 +17,8 @@ export(int) var move_speed
 export(int) var jump_speed
 export(int) var gravity_speed
 
+export(int) var health
+
 #Fazer as inputs do teclado 
 func _physics_process(delta: float) -> void:
 	move()
@@ -24,6 +26,7 @@ func _physics_process(delta: float) -> void:
 	jump(delta)
 	velocity = move_and_slide(velocity, Vector2.UP)
 	sprite.animate(velocity)
+	verify_height()
 	
 func move() -> void:
 	velocity.x = move_speed * get_direction()
@@ -44,7 +47,7 @@ func jump(delta: float) -> void:
 		velocity.y = -jump_speed
 	
 func spaw_projectile() -> void:
-	var projectile: Aroow = PROJECTILE.instance()
+	var projectile: Arrow = PROJECTILE.instance()
 	projectile.direction = sign(spawn_point.position.x)
 	get_tree().root.call_deferred("add_child", projectile)
 	projectile.global_position = spawn_point.global_position
@@ -53,3 +56,19 @@ func spaw_projectile() -> void:
 func freeze(state: bool) -> void:
 	animation.play("idle")
 	set_physics_process(state)
+
+
+func update_health(value: int) -> void:
+	health -= value
+	
+	if health <= 0:
+		var _reload: get_tree().change_scene("res://scenes/world.tscn") #cena do jogo
+		Global.reset()
+		return
+		
+	sprite.action_behavior("hit") #colocar a animação de vida
+
+func vcerifr_height() -> void:
+	if position.y > 200:
+		var _reload: get_tree().change_scene("res://scenes/world.tscn") #cena do jogo
+		

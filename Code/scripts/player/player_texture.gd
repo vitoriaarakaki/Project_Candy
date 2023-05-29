@@ -1,4 +1,4 @@
-extends Node
+extends Sprite
 class_name PlayerTexture
 
 onready var animation: AnimationPlayer = get_node("%Animation")
@@ -51,6 +51,11 @@ func horizontal_behavior(speed: float) -> void:
 
 func on_animation_finished(anim_name: String) -> void:
 	if anim_name == "attack":
+		on_action = false
+		parent.can_attack = true
+		parent.set_physics_process(true)
+	
+	if anim_name == "hit":
 		on_action = false
 		parent.can_attack = true
 		parent.set_physics_process(true)
