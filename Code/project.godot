@@ -8,55 +8,10 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "Area2D",
-"class": "Arrow",
-"language": "GDScript",
-"path": "res://scripts/player/arrow.gd"
-}, {
-"base": "Control",
-"class": "Dialog",
-"language": "GDScript",
-"path": "res://scripts/managment/dialog.gd"
-}, {
-"base": "KinematicBody2D",
-"class": "Enemy",
-"language": "GDScript",
-"path": "res://scripts/enemy/enemy.gd"
-}, {
-"base": "CanvasLayer",
-"class": "Interface",
-"language": "GDScript",
-"path": "res://scripts/managment/interface.gd"
-}, {
-"base": "StaticBody2D",
-"class": "Npc",
-"language": "GDScript",
-"path": "res://scripts/managment/npc.gd"
-}, {
-"base": "KinematicBody2D",
-"class": "Player",
-"language": "GDScript",
-"path": "res://scripts/player/player.gd"
-}, {
-"base": "Sprite",
-"class": "PlayerTexture",
-"language": "GDScript",
-"path": "res://scripts/player/player_texture.gd"
-} ]
-_global_script_class_icons={
-"Arrow": "",
-"Dialog": "",
-"Enemy": "",
-"Interface": "",
-"Npc": "",
-"Player": "",
-"PlayerTexture": ""
-}
-
 [application]
 
 config/name="Project_Candy"
+run/main_scene="res://scenes/opal.tscn"
 
 [autoload]
 
@@ -97,6 +52,29 @@ texture={
 "size_limit": 0,
 "stream": false,
 "svg/scale": 1.0
+}
+
+[input]
+
+a={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+d={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+w={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+s={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
 }
 
 [physics]

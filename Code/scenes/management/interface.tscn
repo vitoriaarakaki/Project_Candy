@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://scripts/managment/interface.gd" type="Script" id=1]
-
-[node name="Interface" type="CanvasLayer" groups=["interface"]]
-script = ExtResource( 1 )
