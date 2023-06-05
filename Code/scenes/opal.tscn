@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/opal.gd" type="Script" id=1]
-[ext_resource path="res://assets1/personagem/db15b9t-da203067-c356-4936-88c6-fd69cfe834b9.png" type="Texture" id=2]
+[ext_resource path="res://project coffe/peresonagens/opal/opal.01.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -153,8 +153,8 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 7.5, 5 )
 
-[node name="opal" type="KinematicBody2D"]
-position = Vector2( 167, 94 )
+[node name="opal" type="KinematicBody2D" groups=["player"]]
+position = Vector2( 192, 96 )
 script = ExtResource( 1 )
 speed = 200
 
@@ -183,5 +183,5 @@ one_way_collision_margin = 0.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
-position = Vector2( -120, -88 )
+position = Vector2( 88, 40 )
 current = true

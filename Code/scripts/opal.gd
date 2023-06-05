@@ -4,6 +4,7 @@ onready var animation: AnimationPlayer = get_node("animation")
 onready var sprite: Sprite = get_node("Sprite")
 
 var velocity: Vector2
+var can_die: bool = false
 export (int) var speed
 
 func _physics_process(_delta: float) -> void:
@@ -41,3 +42,6 @@ func animate3() -> void:
 func animate4() -> void:
 	if velocity == Vector2.ZERO:
 		animation.play("idle down")
+
+func kill() -> void:
+	can_die = true
