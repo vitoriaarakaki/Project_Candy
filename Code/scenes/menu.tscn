@@ -1,0 +1,55 @@
+[gd_scene format=2]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MadeBy" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -77.0
+margin_top = -21.0
+margin_right = -2.0
+custom_constants/separation = 0
+
+[node name="Label" type="Label" parent="MadeBy"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_top = 3.0
+margin_right = 65.0
+margin_bottom = 17.0
+text = "Feito por: "
+
+[node name="Button" type="Button" parent="MadeBy" groups=["button"]]
+self_modulate = Color( 0.0117647, 0.0117647, 0.0117647, 1 )
+margin_left = 65.0
+margin_right = 161.0
+margin_bottom = 21.0
+text = "Alunos de CC"
+flat = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+self_modulate = Color( 0, 0, 0, 1 )
+text = "Project Candy"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 18.0
+margin_right = 87.0
+margin_bottom = 18.0
