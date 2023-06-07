@@ -25,11 +25,11 @@ func move() -> void:
 	
 func animate() -> void:
 	if Input.is_key_pressed(KEY_D):
-		animation.play("run left")
+		animation.play("run right")
 		
 func animate1() -> void:
 	if Input.is_key_pressed(KEY_A):
-		animation.play("run right")
+		animation.play("run left")
 		
 func animate2() -> void:
 	if Input.is_key_pressed(KEY_W):

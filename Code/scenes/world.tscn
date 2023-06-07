@@ -18,7 +18,7 @@ position = Vector2( 512, 0 )
 
 [node name="opal" parent="." instance=ExtResource( 1 )]
 position = Vector2( 192, 104 )
-scale = Vector2( 0.584895, 0.566165 )
+scale = Vector2( 0.379964, 0.331479 )
 
 [node name="Slime" parent="." instance=ExtResource( 3 )]
 position = Vector2( 280, 120 )

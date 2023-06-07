@@ -1,0 +1,221 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://gerenciarUsuario.gd" type="Script" id=1]
+[ext_resource path="res://fontes/04B_30__.TTF" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=7]
+size = 10
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 10
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 10
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 10
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 10
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 18
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 10
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 10
+outline_color = Color( 0.866667, 0.0784314, 0.392157, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 10
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 10
+font_data = ExtResource( 2 )
+
+[sub_resource type="Shader" id=2]
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
+
+[node name="GerenciarUsuarios" type="Node2D"]
+scale = Vector2( 0.913454, 0.795746 )
+script = ExtResource( 1 )
+
+[node name="Panel" type="ColorRect" parent="."]
+self_modulate = Color( 0.945098, 0.596078, 0.733333, 1 )
+margin_right = 421.0
+margin_bottom = 241.0
+
+[node name="LabelS" type="Label" parent="."]
+self_modulate = Color( 0.866667, 0.0784314, 0.392157, 1 )
+margin_left = 79.0
+margin_top = 176.0
+margin_right = 131.0
+margin_bottom = 190.0
+custom_fonts/font = SubResource( 7 )
+text = "SENHA:"
+
+[node name="LabelP" type="Label" parent="."]
+modulate = Color( 0.866667, 0.0784314, 0.392157, 1 )
+margin_left = 43.7898
+margin_top = 140.748
+margin_right = 128.79
+margin_bottom = 154.748
+custom_fonts/font = SubResource( 8 )
+text = "PONTUACAO:"
+
+[node name="LabelE" type="Label" parent="."]
+modulate = Color( 0.866667, 0.0784314, 0.392157, 1 )
+margin_left = 79.0
+margin_top = 112.0
+margin_right = 131.0
+margin_bottom = 126.0
+custom_fonts/font = SubResource( 6 )
+text = "E-MAIL:"
+
+[node name="LabelN" type="Label" parent="."]
+modulate = Color( 0.866667, 0.0784314, 0.392157, 1 )
+margin_left = 87.5797
+margin_top = 80.4277
+margin_right = 136.58
+margin_bottom = 94.4277
+custom_fonts/font = SubResource( 4 )
+text = "NOME:"
+
+[node name="LabelID" type="Label" parent="."]
+modulate = Color( 0.866667, 0.0784314, 0.392157, 1 )
+margin_left = 96.3376
+margin_top = 50.2673
+margin_right = 123.338
+margin_bottom = 64.2673
+custom_fonts/font = SubResource( 5 )
+text = "ID: "
+
+[node name="LabelGJ" type="Label" parent="."]
+modulate = Color( 0.866667, 0.0784314, 0.392157, 1 )
+margin_left = 70.0637
+margin_top = 10.0535
+margin_right = 352.064
+margin_bottom = 31.0535
+custom_fonts/font = SubResource( 1 )
+text = "Gerenciar Jogadores"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="LineEditId" type="LineEdit" parent="."]
+self_modulate = Color( 0.866667, 0.0784314, 0.392157, 1 )
+margin_left = 123.0
+margin_top = 40.0
+margin_right = 281.0
+margin_bottom = 64.0
+align = 1
+
+[node name="LineEditNome" type="LineEdit" parent="."]
+self_modulate = Color( 0.866667, 0.0784314, 0.392157, 1 )
+margin_left = 135.748
+margin_top = 71.6309
+margin_right = 279.748
+margin_bottom = 95.6309
+
+[node name="LineEditPoints" type="LineEdit" parent="."]
+self_modulate = Color( 0.866667, 0.0784314, 0.392157, 1 )
+margin_left = 135.749
+margin_top = 135.722
+margin_right = 279.749
+margin_bottom = 159.722
+
+[node name="LineEditEmail" type="LineEdit" parent="."]
+self_modulate = Color( 0.866667, 0.0784314, 0.392157, 1 )
+margin_left = 136.0
+margin_top = 104.0
+margin_right = 280.0
+margin_bottom = 128.0
+
+[node name="LineEditSenha" type="LineEdit" parent="."]
+self_modulate = Color( 0.866667, 0.0784314, 0.392157, 1 )
+margin_left = 135.749
+margin_top = 170.909
+margin_right = 280.749
+margin_bottom = 194.909
+
+[node name="ButtonBuscar" type="Button" parent="."]
+modulate = Color( 0.866667, 0.0784314, 0.392157, 1 )
+margin_left = 289.0
+margin_top = 40.0
+margin_right = 354.0
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 9 )
+text = "BUSCAR"
+
+[node name="ButtonSlavar" type="Button" parent="."]
+modulate = Color( 0.866667, 0.0784314, 0.392157, 1 )
+margin_left = 78.8217
+margin_top = 208.609
+margin_right = 138.822
+margin_bottom = 228.609
+rect_pivot_offset = Vector2( -368, -88 )
+custom_fonts/font = SubResource( 10 )
+text = "SALVAR"
+
+[node name="ButtonExcluir" type="Button" parent="."]
+modulate = Color( 0.866667, 0.0784314, 0.392157, 1 )
+margin_left = 183.917
+margin_top = 208.609
+margin_right = 248.917
+margin_bottom = 228.609
+custom_fonts/font = SubResource( 11 )
+text = "EXCLUIR"
+
+[node name="ButtonLimpar" type="Button" parent="."]
+modulate = Color( 0.866667, 0.0784314, 0.392157, 1 )
+margin_left = 289.013
+margin_top = 208.609
+margin_right = 350.013
+margin_bottom = 228.609
+custom_fonts/font = SubResource( 12 )
+text = "LIMPAR"
+
+[node name="HTTPRequestInsert" type="HTTPRequest" parent="."]
+
+[node name="HTTPRequestUpdate" type="HTTPRequest" parent="."]
+
+[node name="HTTPRequestDelete" type="HTTPRequest" parent="."]
+
+[node name="HTTPRequestSelect" type="HTTPRequest" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+material = SubResource( 3 )
+use_parent_material = true
+margin_right = 384.0
+margin_bottom = 192.0
+color = Color( 0.866667, 0.0784314, 0.392157, 1 )
+
+[node name="Button" type="Button" parent="ColorRect"]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[connection signal="pressed" from="ButtonSlavar" to="." method=" _on_Button_Ok_pressed"]
+[connection signal="pressed" from="ButtonExcluir" to="." method=" _on_Button_Ok_pressed"]
+[connection signal="pressed" from="ButtonLimpar" to="." method=" _on_Button_Ok_pressed"]
+[connection signal="request_completed" from="HTTPRequestInsert" to="." method=" _on_HTTP_Insert_request_completed"]
+[connection signal="request_completed" from="HTTPRequestUpdate" to="." method="_on_HTTP_Update_request_completed"]
+[connection signal="request_completed" from="HTTPRequestDelete" to="." method="_on_HTTP_Delete_request_completed"]
+[connection signal="request_completed" from="HTTPRequestSelect" to="." method="_on_HTTP_Select_request_completed"]
