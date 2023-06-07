@@ -16,10 +16,13 @@ position = Vector2( 384, -8 )
 [node name="Rural" parent="." instance=ExtResource( 4 )]
 position = Vector2( 512, 0 )
 
-[node name="opal" parent="." instance=ExtResource( 1 )]
-position = Vector2( 192, 104 )
+[node name="YSort" type="YSort" parent="."]
+position = Vector2( -32, -24 )
+
+[node name="opal" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 224, 128 )
 scale = Vector2( 0.379964, 0.331479 )
 
-[node name="Slime" parent="." instance=ExtResource( 3 )]
+[node name="Slime" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 280, 120 )
 scale = Vector2( 0.702677, 0.671075 )

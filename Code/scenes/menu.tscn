@@ -1,17 +1,13 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://fontes/04B_30__.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://fontes/Pixilart - Magic castle.png" type="Texture" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 15
-outline_color = Color( 0.866667, 0.0784314, 0.392157, 1 )
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 13
 outline_color = Color( 0.866667, 0.0784314, 0.392157, 1 )
 font_data = ExtResource( 1 )
 
@@ -29,17 +25,24 @@ font_data = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
+[node name="Pixilart-MagicCastle" type="Sprite" parent="."]
+position = Vector2( 192, 96 )
+scale = Vector2( 0.3, 0.266667 )
+texture = ExtResource( 2 )
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 self_modulate = Color( 0.945098, 0.596078, 0.733333, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Label" type="Label" parent="."]
+self_modulate = Color( 0.866667, 0.0784314, 0.392157, 1 )
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -96.0
+margin_left = -176.0
 margin_top = 16.0
-margin_right = 97.0
+margin_right = 17.0
 margin_bottom = 33.0
 custom_fonts/font = SubResource( 1 )
 text = "PROJECT CANDY"
@@ -52,36 +55,27 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -40.0
-margin_top = -39.0
-margin_right = 47.0
-margin_bottom = -17.0
+margin_left = -176.0
+margin_top = -40.0
+margin_right = -89.0
+margin_bottom = -18.0
 custom_fonts/font = SubResource( 2 )
 text = "JOGAR"
 
-[node name="ButtonOpcoes" type="Button" parent="."]
-self_modulate = Color( 0.866667, 0.0784314, 0.392157, 1 )
-margin_left = 152.0
-margin_top = 152.0
-margin_right = 239.0
-margin_bottom = 176.0
-custom_fonts/font = SubResource( 3 )
-text = "ALUNOS"
-
 [node name="ButtonSair" type="Button" parent="."]
 self_modulate = Color( 0.866667, 0.0784314, 0.392157, 1 )
-margin_left = 152.0
+margin_left = 16.0
 margin_top = 120.0
-margin_right = 239.0
+margin_right = 103.0
 margin_bottom = 142.0
 custom_fonts/font = SubResource( 4 )
 text = "SAIR"
 
 [node name="ButtonAlunos" type="Button" parent="."]
 self_modulate = Color( 0.866667, 0.0784314, 0.392157, 1 )
-margin_left = 152.0
+margin_left = 16.0
 margin_top = 88.0
-margin_right = 239.0
+margin_right = 103.0
 margin_bottom = 112.0
 custom_fonts/font = SubResource( 5 )
 text = "OPCOES"

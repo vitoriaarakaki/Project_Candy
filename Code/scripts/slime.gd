@@ -7,6 +7,7 @@ var player_ref = null
 var velocity: Vector2
 
 export(int) var speed
+signal enemy_hit 
 
 func _physics_process(_delta: float) -> void:
 	move()

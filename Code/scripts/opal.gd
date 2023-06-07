@@ -4,16 +4,13 @@ onready var animation: AnimationPlayer = get_node("animation")
 onready var sprite: Sprite = get_node("Sprite")
 
 var velocity: Vector2
-var can_die: bool = false
 export (int) var speed
+
 
 func _physics_process(_delta: float) -> void:
 	move()
 	animate()
-	animate1()
-	animate2()
-	animate3()
-	animate4()
+	direction()
 
 func move() -> void:
 	var direction_vector: Vector2 = Vector2(
@@ -22,26 +19,18 @@ func move() -> void:
 	).normalized()
 	velocity = direction_vector * speed
 	velocity = move_and_slide(velocity)
-	
+
 func animate() -> void:
-	if Input.is_key_pressed(KEY_D):
+	if velocity != Vector2.ZERO: 
 		animation.play("run right")
-		
-func animate1() -> void:
-	if Input.is_key_pressed(KEY_A):
-		animation.play("run left")
-		
-func animate2() -> void:
-	if Input.is_key_pressed(KEY_W):
-		animation.play("run up")
-		
-func animate3() -> void:
-	if Input.is_key_pressed(KEY_S):
-		animation.play("run down")
-		
-func animate4() -> void:
-	if velocity == Vector2.ZERO:
+	else: 
 		animation.play("idle down")
 
-func kill() -> void:
-	can_die = true
+func direction() -> void:
+	if velocity.x > 0:
+		sprite.flip_h = false
+	else: 
+		sprite.flip_h = true
+
+
+
