@@ -24,3 +24,16 @@ scale = Vector2( 0.379964, 0.331479 )
 [node name="Slime" parent="." instance=ExtResource( 3 )]
 position = Vector2( 248, 96 )
 scale = Vector2( 0.702677, 0.671075 )
+
+[node name="Slime2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 196.641, 41.7979 )
+scale = Vector2( 0.702677, 0.671075 )
+
+[node name="Slime3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 177.328, 174.656 )
+
+[node name="Slime4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 667.176, 41.7979 )
+
+[node name="Slime5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 807.634, 131.365 )

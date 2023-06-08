@@ -101,8 +101,8 @@ position = Vector2( 32, 11 )
 scale = Vector2( 0.104115, 0.139205 )
 texture = ExtResource( 1 )
 
-[connection signal="pressed" from="CanvasLayer/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/play" to="." method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/options" to="." method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="CanvasLayer/exit" to="." method="_on_MenuButton_pressed"]

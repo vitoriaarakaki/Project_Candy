@@ -3,10 +3,10 @@ extends KinematicBody2D
 onready var animation: AnimationPlayer = get_node("Animation")
 onready var sprite: Sprite = get_node("Sprite")
 
-var can_die: bool = false
 
 var player_ref = null
 var velocity: Vector2
+var can_die: bool = false
 
 export(int) var speed
 
@@ -32,7 +32,7 @@ func move() -> void:
 
 func animate() -> void:
 	if can_die:
-		animation.play("dead")
+		animation.play("die")
 		set_physics_process(false)
 	elif velocity != Vector2.ZERO:
 		animation.play("walk")
@@ -58,6 +58,6 @@ func kill(area):
 		can_die = true
 		
 func on_animation_finished(anim_name):
-	if anim_name == "dead":
+	if anim_name == "die":
 		queue_free()
 

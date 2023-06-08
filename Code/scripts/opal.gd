@@ -25,7 +25,7 @@ func move() -> void:
 	velocity = move_and_slide(velocity)
 
 func attack() -> void:
-	if Input.is_action_just_pressed("ui_select") and not can_attack: 
+	if Input.is_action_just_pressed("attack") and not can_attack: 
 		can_attack = true 
 	
 func animate() -> void:
@@ -43,10 +43,10 @@ func animate() -> void:
 func direction() -> void:
 	if velocity.x > 0:
 		sprite.flip_h = false
-		collision.position = Vector2(30.688, 13.859)
+		collision.position = Vector2(20, 8)
 	else: 
 		sprite.flip_h = true
-		collision.position = Vector2(-30.688, 13.859)
+		collision.position = Vector2(-20, 8)
 
 func kill() -> void:
 	can_die = true

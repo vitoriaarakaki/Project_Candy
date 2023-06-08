@@ -44,7 +44,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 18, 22, 21 ]
+"values": [ 18, 21, 22 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AttackArea/Collision:disabled")
@@ -53,10 +53,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3, 0.5 ),
+"times": PoolRealArray( 0, 0.2, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ true, true, true ]
+"values": [ true, false, true ]
 }
 
 [sub_resource type="Animation" id=16]
@@ -128,10 +128,6 @@ one_way_collision_margin = 0.0
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
 current = true
-limit_left = 0
-limit_top = -50
-limit_right = 1000
-limit_bottom = 192
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 editor_draw_limits = true
@@ -140,7 +136,8 @@ editor_draw_drag_margin = true
 [node name="AttackArea" type="Area2D" parent="." groups=["player_attack"]]
 
 [node name="Collision" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2( 23.1875, 13.8594 )
+visible = false
+position = Vector2( 20, 8 )
 shape = SubResource( 15 )
 disabled = true
 
