@@ -50,6 +50,7 @@ func direction() -> void:
 
 func kill() -> void:
 	can_die = true
+	get_tree().change_scene("res://scenes/game over.tscn")
 
 func on_animation_finished(anim_name):
 	if anim_name == "dead":

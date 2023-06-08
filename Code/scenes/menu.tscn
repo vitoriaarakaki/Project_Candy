@@ -1,81 +1,109 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://fontes/04B_30__.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://project coffe/titulos/exit1.png" type="Texture" id=1]
 [ext_resource path="res://fontes/Pixilart - Magic castle.png" type="Texture" id=2]
+[ext_resource path="res://project coffe/titulos/767.png" type="Texture" id=3]
+[ext_resource path="res://project coffe/titulos/options.png" type="Texture" id=4]
+[ext_resource path="res://scripts/menu.tres.gd" type="Script" id=5]
+[ext_resource path="res://project coffe/titulos/play (2).png" type="Texture" id=6]
 
-[sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 1 )
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../KinematicBody2D/nome:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
 
-[sub_resource type="DynamicFont" id=2]
-size = 15
-outline_color = Color( 0.866667, 0.0784314, 0.392157, 1 )
-font_data = ExtResource( 1 )
+[sub_resource type="Animation" id=2]
+resource_name = "titulo"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../KinematicBody2D/nome:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
 
-[sub_resource type="DynamicFont" id=4]
-size = 15
-outline_color = Color( 0.866667, 0.0784314, 0.392157, 1 )
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=5]
-size = 13
-outline_color = Color( 0.866667, 0.0784314, 0.392157, 1 )
-font_data = ExtResource( 1 )
-
-[node name="Menu" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="menu" type="Node2D"]
+scale = Vector2( 1.00677, 1.00298 )
+script = ExtResource( 5 )
 
 [node name="Pixilart-MagicCastle" type="Sprite" parent="."]
 position = Vector2( 192, 96 )
 scale = Vector2( 0.3, 0.266667 )
 texture = ExtResource( 2 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-self_modulate = Color( 0.945098, 0.596078, 0.733333, 1 )
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="."]
-self_modulate = Color( 0.866667, 0.0784314, 0.392157, 1 )
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -176.0
-margin_top = 16.0
-margin_right = 17.0
-margin_bottom = 33.0
-custom_fonts/font = SubResource( 1 )
-text = "PROJECT CANDY"
-align = 1
-valign = 1
+[node name="KinematicBody2D" type="KinematicBody2D" parent="CanvasLayer"]
 
-[node name="ButtonJogar" type="Button" parent="."]
-self_modulate = Color( 0.866667, 0.0784314, 0.392157, 1 )
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -176.0
-margin_top = -40.0
-margin_right = -89.0
-margin_bottom = -18.0
-custom_fonts/font = SubResource( 2 )
-text = "JOGAR"
+[node name="nome" type="Sprite" parent="CanvasLayer/KinematicBody2D"]
+position = Vector2( 158, 25 )
+scale = Vector2( 0.16455, 0.174912 )
+texture = ExtResource( 3 )
+vframes = 5
 
-[node name="ButtonSair" type="Button" parent="."]
-self_modulate = Color( 0.866667, 0.0784314, 0.392157, 1 )
-margin_left = 16.0
-margin_top = 120.0
-margin_right = 103.0
-margin_bottom = 142.0
-custom_fonts/font = SubResource( 4 )
-text = "SAIR"
+[node name="animation" type="AnimationPlayer" parent="CanvasLayer/KinematicBody2D"]
+root_node = NodePath("")
+anims/RESET = SubResource( 1 )
+anims/titulo = SubResource( 2 )
 
-[node name="ButtonAlunos" type="Button" parent="."]
-self_modulate = Color( 0.866667, 0.0784314, 0.392157, 1 )
-margin_left = 16.0
-margin_top = 88.0
-margin_right = 103.0
-margin_bottom = 112.0
-custom_fonts/font = SubResource( 5 )
-text = "OPCOES"
+[node name="play" type="MenuButton" parent="CanvasLayer"]
+margin_left = 21.0
+margin_top = 79.0
+margin_right = 92.0
+margin_bottom = 99.0
+rect_pivot_offset = Vector2( 71, 10 )
+
+[node name="Play" type="Sprite" parent="CanvasLayer/play"]
+position = Vector2( 35, 10 )
+scale = Vector2( 0.157809, 0.1875 )
+texture = ExtResource( 6 )
+
+[node name="options" type="MenuButton" parent="CanvasLayer"]
+margin_left = 19.0
+margin_top = 110.0
+margin_right = 130.0
+margin_bottom = 130.0
+rect_pivot_offset = Vector2( 71, 10 )
+focus_mode = 2
+
+[node name="options" type="Sprite" parent="CanvasLayer/options"]
+position = Vector2( 56, 9 )
+scale = Vector2( 0.0970092, 0.144983 )
+texture = ExtResource( 4 )
+
+[node name="exit" type="MenuButton" parent="CanvasLayer"]
+margin_left = 20.0
+margin_top = 141.0
+margin_right = 88.0
+margin_bottom = 163.0
+rect_pivot_offset = Vector2( 71, 10 )
+focus_mode = 2
+
+[node name="Exit1" type="Sprite" parent="CanvasLayer/exit"]
+position = Vector2( 32, 11 )
+scale = Vector2( 0.104115, 0.139205 )
+texture = ExtResource( 1 )
+
+[connection signal="pressed" from="CanvasLayer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/play" to="." method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/options" to="." method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CanvasLayer/exit" to="." method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/exit" to="." method="_on_exit_pressed"]

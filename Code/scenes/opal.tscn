@@ -53,7 +53,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4 ),
+"times": PoolRealArray( 0, 0.3, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ true, true, true ]
@@ -97,7 +97,7 @@ tracks/0/keys = {
 extents = Vector2( 8.15951, 5.22717 )
 
 [sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 5.6875, 13.8594 )
+extents = Vector2( 13.1875, 13.8594 )
 
 [node name="opal" type="KinematicBody2D" groups=["player"]]
 position = Vector2( 192, 96 )
@@ -140,8 +140,7 @@ editor_draw_drag_margin = true
 [node name="AttackArea" type="Area2D" parent="." groups=["player_attack"]]
 
 [node name="Collision" type="CollisionShape2D" parent="AttackArea"]
-visible = false
-position = Vector2( 30.6875, 13.8594 )
+position = Vector2( 23.1875, 13.8594 )
 shape = SubResource( 15 )
 disabled = true
 
