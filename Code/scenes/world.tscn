@@ -37,3 +37,10 @@ position = Vector2( 667.176, 41.7979 )
 
 [node name="Slime5" parent="." instance=ExtResource( 3 )]
 position = Vector2( 807.634, 131.365 )
+
+[node name="Slime6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 646.107, 167.192 )
+
+[node name="Slime7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 456.489, 151.517 )
+scale = Vector2( 1, 1 )

@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://project coffe/titulos/exit1.png" type="Texture" id=1]
 [ext_resource path="res://fontes/Pixilart - Magic castle.png" type="Texture" id=2]
 [ext_resource path="res://project coffe/titulos/767.png" type="Texture" id=3]
-[ext_resource path="res://project coffe/titulos/options.png" type="Texture" id=4]
 [ext_resource path="res://scripts/menu.tres.gd" type="Script" id=5]
 [ext_resource path="res://project coffe/titulos/play (2).png" type="Texture" id=6]
 
@@ -75,24 +74,11 @@ position = Vector2( 35, 10 )
 scale = Vector2( 0.157809, 0.1875 )
 texture = ExtResource( 6 )
 
-[node name="options" type="MenuButton" parent="CanvasLayer"]
-margin_left = 19.0
-margin_top = 110.0
-margin_right = 130.0
-margin_bottom = 130.0
-rect_pivot_offset = Vector2( 71, 10 )
-focus_mode = 2
-
-[node name="options" type="Sprite" parent="CanvasLayer/options"]
-position = Vector2( 56, 9 )
-scale = Vector2( 0.0970092, 0.144983 )
-texture = ExtResource( 4 )
-
 [node name="exit" type="MenuButton" parent="CanvasLayer"]
-margin_left = 20.0
-margin_top = 141.0
-margin_right = 88.0
-margin_bottom = 163.0
+margin_left = 19.0
+margin_top = 104.0
+margin_right = 87.0
+margin_bottom = 126.0
 rect_pivot_offset = Vector2( 71, 10 )
 focus_mode = 2
 
@@ -101,9 +87,7 @@ position = Vector2( 32, 11 )
 scale = Vector2( 0.104115, 0.139205 )
 texture = ExtResource( 1 )
 
-[connection signal="pressed" from="CanvasLayer/play" to="." method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="CanvasLayer/options" to="." method="_on_MenuButton_pressed"]
-[connection signal="pressed" from="CanvasLayer/options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="CanvasLayer/exit" to="." method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/play" to="." method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CanvasLayer/exit" to="." method="_on_MenuButton_pressed"]
