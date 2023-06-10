@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/opal.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/city.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/slime.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/rural.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/estrada.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/pompom.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/mumu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/fim.tscn" type="PackedScene" id=8]
 
 [node name="World" type="Node2D"]
 scale = Vector2( 1.13913, 1.33978 )
@@ -14,11 +17,14 @@ position = Vector2( 384, -8 )
 
 [node name="City" parent="." instance=ExtResource( 2 )]
 
+[node name="fim" parent="." instance=ExtResource( 8 )]
+position = Vector2( 891.909, 0 )
+
 [node name="Rural" parent="." instance=ExtResource( 4 )]
 position = Vector2( 512, 0 )
 
 [node name="opal" parent="." instance=ExtResource( 1 )]
-position = Vector2( 192, 104 )
+position = Vector2( 189.618, 44.7835 )
 scale = Vector2( 0.379964, 0.331479 )
 
 [node name="Slime" parent="." instance=ExtResource( 3 )]
@@ -26,21 +32,23 @@ position = Vector2( 248, 96 )
 scale = Vector2( 0.702677, 0.671075 )
 
 [node name="Slime2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 196.641, 41.7979 )
+position = Vector2( 161.527, 131.365 )
 scale = Vector2( 0.702677, 0.671075 )
 
 [node name="Slime3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 177.328, 174.656 )
-
-[node name="Slime4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 667.176, 41.7979 )
-
-[node name="Slime5" parent="." instance=ExtResource( 3 )]
-position = Vector2( 807.634, 131.365 )
-
-[node name="Slime6" parent="." instance=ExtResource( 3 )]
-position = Vector2( 646.107, 167.192 )
+position = Vector2( 309.008, 161.22 )
 
 [node name="Slime7" parent="." instance=ExtResource( 3 )]
 position = Vector2( 456.489, 151.517 )
-scale = Vector2( 1, 1 )
+
+[node name="Pom-Pom" parent="." instance=ExtResource( 6 )]
+position = Vector2( 807.634, 107.48 )
+scale = Vector2( 0.957779, 0.73087 )
+
+[node name="Mu-Mu" parent="." instance=ExtResource( 7 )]
+position = Vector2( 625.038, 41.7979 )
+scale = Vector2( 0.663453, 0.645173 )
+
+[node name="Mu-Mu2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 667.176, 161.22 )
+scale = Vector2( 0.663453, 0.645173 )

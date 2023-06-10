@@ -1,9 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://project coffe/Sprout Lands - Sprites - Basic pack/Characters/Free Cow Sprites.png" type="Texture" id=1]
-
-[sub_resource type="Animation" id=1]
-resource_name = "New Anim"
+[ext_resource path="res://scripts/mumu.gd" type="Script" id=2]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -18,6 +16,21 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 5 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -38,7 +51,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=4]
 resource_name = "walk"
-length = 0.5
+length = 0.7
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -47,21 +60,45 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1, 2, 3, 4, 4 ]
+"values": [ 1, 2, 3, 4 ]
 }
 
+[sub_resource type="CircleShape2D" id=5]
+radius = 56.5685
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 13.5, 8.5 )
+
 [node name="Mu-Mu" type="KinematicBody2D"]
+script = ExtResource( 2 )
+speed = 60
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 3
 vframes = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-"anims/New Anim" = SubResource( 1 )
+[node name="Animation" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 2 )
+anims/die = SubResource( 1 )
 anims/idle = SubResource( 3 )
 anims/walk = SubResource( 4 )
+
+[node name="Area" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="Area"]
+shape = SubResource( 5 )
+
+[node name="CollisionArea" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="CollisionArea"]
+position = Vector2( 0.5, 4.5 )
+shape = SubResource( 6 )
+
+[connection signal="animation_finished" from="Animation" to="." method="on_animation_finished"]
+[connection signal="body_entered" from="Area" to="." method="on_body_entered"]
+[connection signal="body_exited" from="Area" to="." method=" on_body_exited"]
+[connection signal="area_entered" from="CollisionArea" to="." method="kill"]
